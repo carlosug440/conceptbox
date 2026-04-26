@@ -32,6 +32,53 @@ body{
   line-height:1.4;
 }
 
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .header-top{
+    display:none;
+  }
+
+  .header-bottom{
+    padding:15px 20px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .navbar{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:none;
+    padding:20px 0;
+  }
+
+  .navbar.active{
+    display:block;
+  }
+
+  .navlist{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+  }
+}
+
+
+
+
+
+
+
 .header-bottom{
   display:flex;
   justify-content:space-between;
