@@ -61,7 +61,7 @@ body{
   color:#c49a2c;
 }
 
-#background{
+.homehero{
   width:100%;
   height:100vh;
   background-image:url("img.jpeg");
