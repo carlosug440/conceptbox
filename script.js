@@ -6,9 +6,22 @@ function includeHTML(id, file) {
 
 includeHTML('header', 'header.html');
 includeHTML('footer', 'footer.html');
-const menuToggle = document.getElementById("menu-toggle");
-const navbar = document.getElementById("navbar");
 
-menuToggle.addEventListener("click", function(){
-  navbar.classList.toggle("active");
-});
+async function loadComponent(id, file) {
+  const response = await fetch(file);
+  const data = await response.text();
+  document.getElementById(id).innerHTML = data;
+
+  if (id === "header") {
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        document
+          .getElementById("navbar")
+          .classList.toggle("active");
+      });
+  }
+}
+
+loadComponent("header", "header.html");
+loadComponent("footer", "footer.html");
